@@ -1,3 +1,3 @@
-# nplgistest
+# nplgis
 
-This is a test repository for the npl gis team
+This is the github repository for the npl gis team
