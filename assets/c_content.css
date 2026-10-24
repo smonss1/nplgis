@@ -1,0 +1,81 @@
+.page-content {
+	width: min(100% - 40px, 1100px);
+	min-height: calc(100vh - 78px);
+	margin: 0 auto;
+	padding: clamp(48px, 9vw, 112px) 0;
+}
+
+.page-eyebrow {
+	margin: 0 0 12px;
+	color: var(--blue);
+	font-size: .8rem;
+	font-weight: 800;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+}
+
+.page-content h1 {
+	max-width: 760px;
+	margin: 0;
+	color: var(--navy);
+	font-size: clamp(2.4rem, 6vw, 4.5rem);
+	line-height: 1.08;
+}
+
+.page-intro {
+	max-width: 680px;
+	margin: 20px 0 32px;
+	color: var(--muted);
+	font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.page-card {
+	max-width: 720px;
+	padding: 24px;
+	border: 1px solid var(--line);
+	border-left: 4px solid var(--blue);
+	border-radius: 10px;
+	background: var(--white);
+	box-shadow: var(--shadow);
+}
+
+.page-card + .page-card {
+	margin-top: 16px;
+}
+
+.page-card[id],
+.page-intro[id] {
+	scroll-margin-top: 100px;
+}
+
+.page-card h2 {
+	margin: 0 0 8px;
+	color: var(--navy);
+	font-size: 1.15rem;
+}
+
+.page-card p {
+	margin: 0 0 16px;
+	color: var(--muted);
+}
+
+.page-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--blue);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.page-link:hover,
+.page-link:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+	.page-content {
+		width: min(100% - 32px, 1100px);
+	}
+}
