@@ -3,31 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="nplgis website test" />
-    <title>nplgis</title>
-    <link rel="stylesheet" href="./assets/style.css" />
+    <meta name="description" content="Meet the Ngan Po Ling GIS Team and explore student-led mapping projects across Hong Kong." />
+    <title>Ngan Po Ling GIS Team</title>
+    <script src="./assets/theme.js"></script>
+    <script src="./assets/navigation.js" defer></script>
+    <link rel="stylesheet" href="./assets/c_shared.css" />
+    <link rel="stylesheet" href="./assets/c_home.css" />
     <script>
       document.documentElement.classList.add("js");
     </script>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%238470FF'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23FFB6C1'/%3E%3Ccircle cx='38' cy='27' r='5' fill='%238470FF'/%3E%3C/svg%3E"
-    />
+    <link rel="icon" type="image/svg+xml" href="./assets/m_Team_Logo.svg" />
   </head>
 
   <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="NPL GIS home">
+        <img src="./assets/m_Team_Logo.svg" alt="" />
+      </a>
+      <nav class="site-nav" aria-label="Main navigation" data-site-nav></nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true">
+        <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+      </button>
+    </header>
+
     <main id="content">
-      <p id="mapdesc">
-        Please be patient if the map doesn't load immediately. If an error shows up, please enable hardware acceleration or use a browser that supports WebGL3. -smons
-      </p>
-      <div id="map">
+      <section class="team-intro" aria-labelledby="intro-title">
+        <div class="team-intro-copy">
+          <p class="intro-eyebrow"><span></span> Ngan Po Ling GIS Team</p>
+          <h1 id="intro-title">See our world<br /><span>through maps.</span></h1>
+          <p class="intro-description">
+            We are a team of curious map-makers exploring how places, people and data connect. Through GIS, we turn questions about Hong Kong into clear, interactive stories—from urban heat and public spaces to the character of our streets.
+          </p>
+          <a class="intro-cta" href="./assets/h_projects.html">
+            Explore our projects <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="intro-projects" aria-label="Topics our team explores">
+          <p class="intro-projects-label">Mapping what matters</p>
+          <article class="intro-project">
+            <span class="intro-project-number">01</span>
+            <span>Urban heat &amp; climate</span>
+          </article>
+          <article class="intro-project">
+            <span class="intro-project-number">02</span>
+            <span>Public spaces &amp; play</span>
+          </article>
+          <article class="intro-project">
+            <span class="intro-project-number">03</span>
+            <span>Hong Kong street life</span>
+          </article>
+          <p class="intro-projects-note">Built with GIS. Shared as maps and stories.</p>
+        </div>
+      </section>
+
+      <section class="map-section" aria-labelledby="map-title">
+        <div class="map-section-heading">
+          <div>
+            <p class="map-eyebrow">Explore in 3D</p>
+            <h2 id="map-title">A new perspective on place.</h2>
+          </div>
+          <p id="mapdesc">
+            Explore Our Latest Project. If it doesn’t load, try enabling hardware acceleration or using a browser that supports WebGL.
+          </p>
+        </div>
+        <div id="map">
         <iframe
-          src="https://plknplgeog.maps.arcgis.com/apps/instant/3dviewer/index.html?appid=3e2130bc075e48dcbff38969698d1d3d"
+          src="https://plknplgeog.maps.arcgis.com/apps/instant/basic/index.html?appid=32b439298deb4cada1b64cbb7c8b79c5"
           title="NPLGIS 3D map"
           allowfullscreen
         >iFrames are not supported on this page.</iframe>
-      </div>
+        </div>
+      </section>
     </main>
 
     <div class="loading-screen" id="loading-screen" role="status" aria-label="Loading map">
@@ -44,8 +90,9 @@
       }
 
       mapFrame.addEventListener("load", () => {
-        window.setTimeout(hideLoadingScreen, 5000);
+        hideLoadingScreen();
       }, { once: true });
     </script>
   </body>
 </html>
+
